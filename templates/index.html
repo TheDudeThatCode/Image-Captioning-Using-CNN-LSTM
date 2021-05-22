@@ -1,0 +1,30 @@
+{%extends "base.html"%}
+
+{%block content%}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class = "description">
+        <p class = "logo-design">📷 Image Captioner</p>
+        <p class = "text pl-5 pr-5">Capt The Pic is a image captioning web app which will convert the uploaded image into a sentence. To build the model I have used ResNet50 and LSTM. I have used ResNet50 to extract the image features. LSTM is mainly used as language model to predict the next word. I have used feature vector of image and current word for predicting the next word</p>
+            <form action="{{url_for('after')}}" method='POST' enctype='multipart/form-data'>
+            <label for="file1" class="custom-file-upload">
+                         Upload an image
+            </label>
+            <input type="file" name='file1' id="file1">
+            <input type="submit" name="btn" value='Predict' class='predict-btn'> 
+            </form>
+      </div>
+    </div>
+    <div class="col-md-6">
+     <div class = "d-flex justify-content-center image-section">
+         <img src = "{{url_for('static', filename='cover.png')}}" class = "img-fluid w-50">
+    </div>
+     <p class = "image-text">Convert Image To Text</p>
+    </div>
+  </div>
+</div>
+
+{%endblock%}

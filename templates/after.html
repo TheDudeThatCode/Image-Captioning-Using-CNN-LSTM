@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+    
+{%block content%}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class = "description">
+        <p class = "logo-design"><span class = "logo">C</span><span class = "logo-letters">apt</span><span class = "logo">_T</span><span class = "logo-letters">he</span><span class = "logo">_P</span><span class = "logo-letters">ic</span></p>
+        <p class = "text pl-5 pr-5">Capt The Pic is a image captioning web app which will convert the uploaded image into a sentence. To build the model I have used ResNet50 and LSTM. I have used ResNet50 to extract the image features. LSTM is mainly used as language model to predict the next word. I have used feature vector of image and current word for predicting the next word</p>
+	  </div>
+    </div>
+    <div class="col-md-6">
+     <div class = "d-flex justify-content-center image-section">
+         <img src = "{{url_for('static', filename='file.jpg')}}" class = "img-fluid predicted-image-section w-75">
+    </div>
+	<p class="caption-line">Predicted Caption</p>
+     <p class = "caption-text">{{data}}</p>
+    </div>
+  </div>
+</div>
+
+
+{%endblock%}
